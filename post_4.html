@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Haidar Ali Abidin</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Haidar Ali Abidin</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="https://ubpkarawang.ac.id">UBP Karawang</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/post_1_bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>Apa itu physical model?</h1>
+                            <span class="meta">
+                                Posted by
+                                <a href="#!">Haidar Ali Abidin</a>
+                                on October 1, 2025
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>Halo, para pejuang kode!</p>
+                        <p>Sebagai mahasiswa informatika, kita pasti sering mendengar istilah "database". Tapi, di balik layar pembuatan database yang andal, ada sebuah proses desain yang krusial, salah satunya adalah pembuatan Physical Model atau Model Fisik. Pernahkah kamu berpikir bagaimana data di aplikasi raksasa seperti Instagram atau Gojek bisa diakses begitu cepat dan tetap terorganisir? Jawabannya ada pada desain databasenya yang matang, dan Physical Model adalah cetak biru terakhir sebelum database itu benar-benar "dibangun".</p>
+                        <p>Yuk, kita bedah tuntas apa itu Physical Model!</p>
+                        <h4 class="section-heading">Memahami Tiga Level Model Data</h4>
+                        <p>Sebelum menyelam ke Physical Model, penting untuk tahu posisinya dalam hierarki desain database. Umumnya, ada tiga level:</p>
+                        <ol>
+                            <li><b>Conceptual Model (Model Konseptual):</b> Ini adalah level paling abstrak. Ibarat sketsa ide di atas serbet. Kita hanya mendefinisikan entitas-entitas utama dan hubungan antar mereka. Contoh: "Seorang <code>User</code> dapat membuat banyak <code>Post.</code>"</li>
+                            <li><b>Logical Model (Model Logis):</b> Ini lebih detail dari konseptual. Di sini kita mendefinisikan atribut (kolom) untuk setiap entitas, serta primary key dan foreign key untuk membangun relasi. Namun, model ini masih independen dari teknologi database spesifik (DBMS) yang akan digunakan.</li>
+                            <li><b>Physical Model (Model Fisik):</b> Nah, ini adalah level paling detail dan konkret. Model ini menerjemahkan Logical Model ke dalam implementasi teknis untuk <b>sistem manajemen database (DBMS)</b> tertentu, seperti MySQL, PostgreSQL, atau SQL Server.</li>
+                        </ol>
+                        <p>Physical Model adalah representasi skema database yang menunjukkan bagaimana data akan disimpan secara fisik di dalam sebuah DBMS. Model ini sangat spesifik dan teknis. Jika Logical Model adalah tentang "apa" (data apa yang disimpan), maka Physical Model adalah tentang "bagaimana" (bagaimana data itu akan disimpan secara efisien).</p>
+                        <p>Di sinilah semua keputusan teknis dibuat, dari penamaan tabel hingga optimasi performa.</p>
+                        <h2 class="section-heading">Komponen Utama Physical Model</h2>
+                        <p>Physical Model mengubah struktur dari Logical Model menjadi elemen-elemen yang bisa dieksekusi oleh DBMS. Berikut adalah komponen utamanya:</p>
+                        <ol>
+                            <li>Nama Tabel dan Kolom: Nama yang akan benar-benar digunakan dalam kode SQL, sering kali mengikuti konvensi penamaan tertentu (misalnya, <code>snake_case</code> atau <code>camelCase</code>).</li>
+                            <li>Tipe Data Spesifik: Setiap kolom harus didefinisikan dengan tipe data yang paling efisien sesuai DBMS-nya. Contoh: <code>VARCHAR(255)</code> untuk teks, <code>INT</code> untuk bilangan bulat, <code>TIMESTAMP</code> untuk waktu di MySQL.</li>
+                            <li>Primary Key (PK) & Foreign Key (FK): Mendefinisikan kolom mana yang menjadi kunci utama dan kunci asing untuk menjaga integritas relasi antar tabel.</li>
+                            <li>Indeks (Indexes): Ini adalah komponen krusial untuk performa! Indeks dibuat pada kolom yang sering digunakan dalam pencarian (klausa <code>WHERE</code>) untuk mempercepat proses query.</li>
+                            <li>Batasan (Constraints): Aturan-aturan yang diterapkan pada data, seperti <code>NOT NULL</code> (tidak boleh kosong), <code>UNIQUE</code> (harus unik), atau <code></code>DEFAULT</code> (nilai bawaan).</li>
+                            <li>Partisi Tabel, Trigger, dan Prosedur Tersimpan: Fitur-fitur spesifik DBMS lainnya yang digunakan untuk manajemen data dan performa.</li>
+                        </ol>
+                        <p>Sama seperti kontraktor yang butuh spesifikasi teknis, seorang Database Administrator (DBA) atau developer butuh Physical Model untuk menulis kode <code>CREATE TABLE</code>.</p>
+                        <p><b>Contoh Praktis: Database Blog Sederhana</b></p>
+                        <p>Bayangkan kita ingin membuat database untuk blog sederhana dengan Logical Model sebagai berikut:</p>
+                        <ul>
+                            <li>Tabel <code>users</code> (id, username, email, password)</li>
+                            <li>Tabel <code>posts</code> (id, title, content, user_id)</li>
+                        </ul>
+                        <p>Saat kita mengubahnya menjadi Physical Model untuk MySQL, hasilnya akan terlihat seperti kode SQL berikut:</p>
+                        <a href="#!"><img class="img-fluid" src="assets/img/DB.sql.png" alt="..." /></a>
+                        <span class="caption text-muted">Gambar di atas merupakan contoh penerapan Physical Model untuk MySQL</span>
+                        <p>Lihat perbedaannya? Physical Model di atas sangat detail:</p>
+                        <ul>
+                            <li>Menggunakan tipe data spesifik MySQL (<code>INT, VARCHAR, TEXT, TIMESTAMP</code>).</li>
+                            <li>Menambahkan <code>AUTO_INCREMENT</code> pada <code>id</code>.</li>
+                            <li>Memberi batasan <code>NOT NULL</code> dan <code>UNIQUE</code>.</li>
+                            <li>Menentukan relasi <code>FOREIGN KEY</code> dengan aksi <code>ON DELETE CASCADE</code> (jika user dihapus, semua post-nya ikut terhapus).</li>
+                            <li>Membuat <code>INDEX</code> pada <code>user_id</code> untuk optimasi.</li>
+                            <p>Physical Model adalah jembatan terakhir antara desain konseptual dan implementasi database yang sesungguhnya. Ini adalah fase di mana teori bertemu dengan praktik, di mana efisiensi, performa, dan integritas data benar-benar dipertaruhkan</p>
+                            <p>Bagi kita sebagai calon software engineer atau database administrator, memahami Physical Model bukan hanya sekadar teori, melainkan sebuah keharusan untuk membangun aplikasi yang skalabel, cepat, dan andal. Jadi, lain kali kamu merancang sebuah sistem, jangan lupakan pentingnya cetak biru terakhir ini!</p>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="https://www.linkedin.com/in/haidaraliabidin?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.instagram.com/haidarali.01?igsh=NTYzc2s4bGFnY2oy">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fa-brands fa-instagram fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://github.com/TheNoir01">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Haidar Ali Abidin 2025</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
