@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Haidar Ali Abidin</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/profile.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Haidar Ali Abidin</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="https://ubpkarawang.ac.id">UBP Karawang</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/post_1_bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>Tutorial Install phpmyadmin via laragon</h1>
+                            <span class="meta">
+                                Posted by
+                                <a href="#!">Haidar Ali Abidin</a>
+                                on October 10, 2025
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>Halo, para pejuang kode!</p>
+                        <p>Sering merasa sedikit ribet saat harus setup local server untuk proyek web baru? Harus install Apache, PHP, MySQL satu per satu, lalu konfigurasinya kadang bikin pusing. Nah, di artikel kali ini, saya mau bagikan cara super mudah untuk menyiapkan development environment yang powerful hanya dalam beberapa menit menggunakan Laragon.</p>
+                        <p>Kita akan menggunakan Laragon versi 6, yang merupakan versi terakhir yang sepenuhnya gratis, dan tentu saja kita akan lengkapi dengan phpMyAdmin untuk mengelola database kita dengan mudah.</p>
+                        <h4 class="section-heading">Install Laragon</h4>
+                        <h6 class="section-heading">Langkah 1: Mengunduh File Installer dari GitHub</h6>
+                        <p>Pertama, kita perlu mengunduh file masternya. Jangan khawatir, saya sudah siapkan link-nya agar teman-teman tidak tersesat.</p>
+                        <ol>
+                            <li>Buka browser favorit kalian dan langsung menuju ke halaman rilis Laragon di GitHub: <a href="https://github.com/leokhoa/laragon/releases">https://github.com/leokhoa/laragon/releases</a> </li>
+                            <li>Cari rilis untuk versi Laragon 6.0.0.</li>
+                            <li>Unduh file bernama <code>laragon-wamp-6.0.0.exe</code>. File ini adalah installer utama yang akan kita gunakan.</li>
+                        </ol>
+                        <a href="#!"><img class="img-fluid" src="assets/img/dokumentasi_post_5-1.png" alt="..." /></a>
+                        <span class="caption text-muted">Gambar di atas merupakan dokumentasi langkah-langkah mengunduh file installer Laragon dari GitHub</span>
+                        <h6 class="section-heading">Langkah 2: Menjalankan File Installer</h6>
+                        <p>Setelah file terunduh, saatnya kita jalankan file installer tersebut.</p>
+                        <ol>
+                            <li>Jalankan file <code>laragon-wamp.exe</code> yang sudah diunduh.</li>
+                            <li>Pilih bahasa instalasi (disarankan English), lalu klik OK.</li>
+                            <a href="#!"><img class="img-fluid" src="assets/img/dokumentasi_post_5-2.1.png" alt="..." /></a>
+                            <li>Nah, ini bagian penting! Saat diminta memilih lokasi instalasi, biarkan saja di C:\laragon. Kenapa? Ini untuk menghindari masalah permission yang sering terjadi di Windows dan akan membuat hidup kita lebih mudah nantinya.</li>
+                            <a href="#!"><img class="img-fluid" src="assets/img/dokumentasi_post_5-2.2.png" alt="..." /></a>
+                            <li>Pada jendela opsi berikutnya, teman-teman bisa biarkan semua centang default aktif. Opsi seperti "Add Notepad++" dan "Add to context menu" itu sangat membantu!</li>
+                            <a href="#!"><img class="img-fluid" src="assets/img/dokumentasi_post_5-2.3.png" alt="..." /></a>
+                            <li>Klik Next, lalu Install, dan biarkan prosesnya berjalan hingga selesai.</li>
+                            <a href="#!"><img class="img-fluid" src="assets/img/dokumentasi_post_5-2.4.png" alt="..." /></a>
+                        </ol>
+                        <h4 class="section-heading">Install phpMyAdmin</h4>
+                        <p>Setelah laragon terinstall langkah selanjutnya yaitu menginstall phpMyAdmin melalui laragon</p>
+                        <ol>
+                            <li>Buka laragon yang sudah diinstall tadi</li>
+                            <a href="#!"><img class="img-fluid" src="assets/img/dokumentasi_post_5-3.1.png" alt="..." /></a>
+                            <li>Klik Menu lalu pilih Quick app lalu pilih phpMyAdmin</li>
+                            <a href="#!"><img class="img-fluid" src="assets/img/dokumentasi_post_5-3.2.png" alt="..." /></a>
+                            <li>Tunggu proses installasi hingga selesai</li>
+                            <a href="#!"><img class="img-fluid" src="assets/img/dokumentasi_post_5-3.3.png" alt="..." /></a>
+                            <li>Untuk mengakses phpMyAdmin bisa melalui menu di laragon atau bisa juga melalui browser dengan mengetikkan alamat http://localhost/phpmyadmin/</li>
+                            <a href="#!"><img class="img-fluid" src="assets/img/dokumentasi_post_5-3.4.png" alt="..." /></a>
+                            <li>Untuk login ke phpMyAdmin, gunakan username: root dan password dikosongkan saja (default)</li>
+                            <a href="#!"><img class="img-fluid" src="assets/img/dokumentasi_post_5-3.5.png" alt="..." /></a>
+                            <li>Selesai, sekarang kalian sudah bisa mengelola database dengan mudah menggunakan phpMyAdmin!</li>
+                            <a href="#!"><img class="img-fluid" src="assets/img/dokumentasi_post_5-3.6.png" alt="..." /></a>
+                        </ol>
+                        <p>
+                            untuk selengkapnya bisa kunjungi video youtube saya di <i><a href="https://youtu.be/6aWpHB6Tzn8">Tutorial Install phpMyAdmin via Laragon</a></i>
+                        </p>
+                        <iframe width="560" height="315" src="https://youtu.be/6aWpHB6Tzn8" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                        <p>Dan itu dia! Dalam beberapa langkah sederhana, kita sudah berhasil menyiapkan lingkungan pengembangan web yang lengkap dengan Laragon dan phpMyAdmin. Sekarang, kalian bisa fokus pada coding tanpa harus pusing dengan setup server.</p>
+                        <p>Jika ada pertanyaan atau butuh bantuan, jangan ragu untuk tinggalkan komentar di bawah. Selamat mencoba dan semoga sukses dengan proyek web kalian!</p>
+                        <p>Salam hangat,</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="https://www.linkedin.com/in/haidaraliabidin?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.instagram.com/haidarali.01?igsh=NTYzc2s4bGFnY2oy">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fa-brands fa-instagram fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://github.com/TheNoir01">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Haidar Ali Abidin 2025</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

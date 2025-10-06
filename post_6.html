@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Haidar Ali Abidin</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/profile.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Haidar Ali Abidin</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="https://ubpkarawang.ac.id">UBP Karawang</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/post_1_bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1> Apa Itu Entitas, Atribut, dan Relasi dalam ERD?</h1>
+                            <span class="meta">
+                                Posted by
+                                <a href="#!">Haidar Ali Abidin</a>
+                                on October 7, 2025
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>Halo, para pejuang kode!</p>
+                        <p>Sebagai mahasiswa Teknik Informatika, saya tahu betul betapa pentingnya memahami dasar-dasar perancangan database. Salah satu konsep paling fundamental namun esensial adalah Entity-Relationship Diagram atau ERD.</p>
+                        <p>Di postingan kali ini, kita akan mengupas tuntas tiga komponen inti dari ERD: Entitas, Atribut, dan Relasi.</p>
+                        <h4 class="section-heading">Apa itu Entitas?</h4>
+                        <p>Anggap saja entitas itu sebagai kata benda. Entitas adalah setiap objek, orang, tempat, atau kejadian yang datanya ingin kita simpan. Dalam sebuah database, entitas biasanya direpresentasikan sebagai sebuah tabel.</p>
+                        <p>Satu aturan penting, sebuah entitas harus merupakan kumpulan dari objek yang sejenis. Contohnya, satu orang mahasiswa bukanlah entitas, tetapi kumpulan dari seluruh "Mahasiswa" adalah sebuah entitas.</p>
+                        <p>Studi Kasus</p>
+                        <p>Mari kita lihat contoh kasus dari sebuah sistem penjualan pulsa sederhana seperti pada gambar di bawah ini.</p>
+                        <a href="#!"><img class="img-fluid" src="assets/img/ERD.png" alt="..." /></a>
+                        <span class="caption text-muted">Gambar di atas merupakan contoh Entity-Relationship Diagram</span>
+                        <p>Dari gambar tersebut, kita bisa mengidentifikasi beberapa entitas:</p>
+                        <ul>
+                            <li><b>Operator</b> Ini adalah tabel yang menyimpan data spesifik tentang para operator seluler (misalnya, Excelcomindo, Mentari)</li>
+                            <li><b>Nota</b> Tabel ini menyimpan informasi tentang setiap transaksi penjualan yang terjadi.</li>
+                            <li><b>Voucher</b>: Entitas ini berisi data mengenai jenis-jenis voucher pulsa yang tersedia.</li>
+                            <li><b>Item</b>: Entitas ini mencatat rincian voucher apa saja yang terjual dalam setiap transaksi di nota.</li>
+                        </ul>
+                        <h4 class="section-heading">Apa itu Atribut?</h4>
+                        <p>Jika entitas adalah kata benda, maka atribut adalah kata sifat atau karakteristik yang mendeskripsikan entitas tersebut. Setiap atribut memberikan sebuah informasi detail mengenai entitasnya. Dalam tabel database, atribut direpresentasikan oleh <b>kolom</b>.</p>
+                        <p>Setiap entitas pasti memiliki atribut. Mari kita bedah atribut dari salah satu entitas pada studi kasus kita:</p>
+                        <p><b>Entitas: Operator</b></p>
+                        <ul>
+                            <li><b>KodeOperator</b>: Ini adalah atribut yang berfungsi sebagai pengenal unik untuk setiap operator (contoh: XL, MNT, FLX). Atribut seperti ini sering disebut sebagai <b>Primary Key</b>.</li>
+                            <li><b>NamaOperator</b>: Atribut ini menyimpan nama lengkap dari operator (contoh: Excelcomindo, Flexi).</li>
+                        </ul>
+                        <p>Begitu pula dengan entitas Voucher, atributnya adalah <code>KodeOperator, KodeVoucher, dan NominalPulsa</code>. Setiap kolom pada sebuah tabel adalah atribut yang menjelaskan entitas tersebut.</p>
+                        <h4 class="section-heading">Apa itu Relasi?</h4>
+                        <p>Relasi atau hubungan bisa kita anggap sebagai kata kerja. Relasi menunjukkan bagaimana dua atau lebih entitas saling terhubung atau berinteraksi. Relasi sangat krusial karena inilah yang menggambarkan bagaimana bagian-bagian berbeda dari database kita saling berkomunikasi.</p>
+                        <p>Dalam ERD, relasi biasanya digambarkan dengan garis yang menghubungkan entitas-entitas tersebut. Ada beberapa jenis relasi yang umum ditemui:</p>
+                        <ol>
+                            <li><b>Operator dan Voucher</b>: Sebuah <code>OPerator</code> memiliki satu atau lebih <code>Voucher</code>. Koneksi antara keduanya adalah atribut <code>KodeOperator</code> yang ada di kedua tabel. Ini adalah contoh relasi <b>One-to-Many</b> (satu ke banyak), di mana satu operator bisa memiliki banyak jenis voucher, tetapi satu jenis voucher hanya dimiliki oleh satu operator.</li>
+                            <li><b>Nota dan Item</b>: Setiap <code>Nota</code> (struk) terdiri dari satu atau lebih <code>Item</code> penjualan. Atribut <code>NoNota</code> menghubungkan kedua entitas ini. Satu transaksi (Nota) bisa mencakup pembelian beberapa item (voucher). Ini juga merupakan relasi <b>One-to-Many</b>.</li>
+                            <li><b>Item dan Voucher</b>: Setiap <code>Item</code> penjualan mengacu pada sebuah Voucher spesifik. Relasi ini terbentuk melalui KodeVoucher yang menghubungkan tabel Item ke tabel Voucher untuk mendapatkan detail seperti nominal pulsanya.</li>
+                        </ol>
+                        <p>Dengan mendefinisikan relasi-relasi ini, kita bisa melakukan query atau pencarian data yang kompleks, misalnya: "Tampilkan semua voucher yang dibeli pada nota milik Joko Waluyo Santoso." Database akan menavigasi dari tabel Nota, ke tabel Item, lalu ke tabel Voucher untuk menemukan jawabannya.</p>
+                        <p>Itu dia penjelasannya! Memahami Entitas (tabel), Atribut (kolom), dan Relasi (penghubung antar tabel) adalah langkah besar pertama untuk menguasai desain database menggunakan ERD. Dengan mengidentifikasi ketiga komponen ini secara tepat, kamu bisa membangun database yang logis, efisien, dan mudah dikembangkan untuk aplikasi apa pun.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="https://www.linkedin.com/in/haidaraliabidin?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.instagram.com/haidarali.01?igsh=NTYzc2s4bGFnY2oy">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fa-brands fa-instagram fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://github.com/TheNoir01">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Haidar Ali Abidin 2025</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
