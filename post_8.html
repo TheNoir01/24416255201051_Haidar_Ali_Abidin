@@ -40,7 +40,7 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="post-heading">
-                            <h1> Apa itu Primary Key, Foreign Key, dan Candidate Key?</h1>
+                            <h1>Apa Itu Relasi pada ERD & Mengapa Relasi Many-to-Many Sebaiknya Dihindari?</h1>
                             <span class="meta">
                                 Posted by
                                 <a href="#!">Haidar Ali Abidin</a>
@@ -57,75 +57,40 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <p>Halo, para pejuang kode!</p>
-                        <p>Sebagai mahasiswa Teknik Informatika, salah satu konsep dasar yang wajib kita kuasai dalam merancang database adalah tentang "kunci" atau key. Kunci ini bukan sembarang kunci, lho. Mereka adalah fondasi yang memastikan data kita terstruktur, unik, dan saling terhubung dengan benar.</p>
-                        <p>Pada artikel kali ini, kita akan membahas tuntas tiga jenis kunci utama dalam database: <b>Primary Key</b>, <b>Foreign Key</b>, dan <b>Candidate Key</b>. Mari kita bedah satu per satu!</p>
-                        <h4 class="section-heading">1. Apa itu Candidate Key?</h4>
-                        <p>Sebelum mengenal Primary Key, kita harus paham dulu apa itu <b>Candidate Key.</b></p>
-                        <p>Bayangkan kamu punya sebuah tabel data mahasiswa. Untuk membedakan setiap mahasiswa secara unik, kamu bisa menggunakan beberapa atribut, misalnya:</p>
-                        <ul>
-                            <li>NIM (Nomor Induk Mahasiswa)</li>
-                            <li>Email</li>
-                            <li>Kombinasi (Nama Lengkap + Tanggal Lahir + Alamat)</li>
-                        </ul>
-                        <p>Semua atribut atau gabungan atribut yang bisa secara unik mengidentifikasi setiap baris data dalam sebuah tabel disebut Candidate Key. Artinya, semua pilihan di atas adalah "kandidat" untuk menjadi kunci utama.</p>
-                        <p><b>Syarat Candidate Key</b></p>
-                        <ul>
-                            <li><b>Unik</b>: Nilainya tidak boleh sama untuk baris yang berbeda.</li>
-                            <li><b>Tidak Boleh NULL</b>: Nilainya tidak boleh kosong.</li>
-                        </ul>
-                        <p>Dari semua kandidat yang ada, kita akan memilih satu yang terbaik untuk menjadi Primary Key.</p>
-                        <h4 class="section-heading">2. Apa itu Primary Key?</h4>
-                        <p><b>Primary Key</b> adalah <b>Candidate Key</b> yang terpilih sebagai identitas utama untuk setiap baris dalam sebuah tabel. Ia adalah "sang juara" yang paling efisien dan paling representatif untuk menjadi acuan.</p>
-                        <p>Dalam kasus tabel mahasiswa tadi, <b>NIM</b> adalah pilihan terbaik untuk menjadi Primary Key karena singkat, unik, dan pasti dimiliki oleh setiap mahasiswa.</p>
-                        <p><b>Karakteristik Primary Key:</b></p>
-                        <ul>
-                            <li>Hanya ada satu Primary Key dalam satu tabel.</li>
-                            <li>Nilainya harus unik dan tidak boleh NULL.</li>
-                            <li>Biasanya berupa angka (integer) yang bisa bertambah otomatis (auto-increment) untuk efisiensi.</li>
-                        </ul>
-                        <h4 class="section-heading">3. Apa itu Foreign Key?</h4>
-                        <p>Nah, kalau Primary Key adalah identitas di "rumahnya" sendiri, maka Foreign Key adalah "kunci tamu" yang menghubungkan satu tabel dengan tabel lainnya.</p>
-                        <p>Foreign Key adalah sebuah kolom (atau beberapa kolom) di sebuah tabel yang nilainya merujuk pada Primary Key di tabel lain. Fungsinya adalah untuk menciptakan dan menjaga hubungan (relasi) antar tabel.</p>
-                        <p>Contohnya, pada tabel <code>Mata_Kuliah_Diambil</code>, kita butuh kolom <code>NIM_Mahasiswa</code> untuk menandakan siapa yang mengambil mata kuliah tersebut. Kolom <code>NIM_Mahasiswa</code> ini adalah Foreign Key yang merujuk ke Primary Key <code>NIM</code> di tabel <code>Mahasiswa</code>.</p>
-                        <p><b>Penerapan pada ERD (Entity-Relationship Diagram)</b></p>
-                        <p>Sekarang, mari kita lihat 5 contoh penerapan kunci ini dalam berbagai skenario menggunakan ERD. Kamu bisa membuat visualisasi ini dengan mudah di <b>MySQL Workbench</b> pada bagian EER Diagram.</p>
-                        <p><b>Contoh 1: Sistem Akademik Kampus</b></p>
-                        <ul>
-                            <li><b>Entitas</b>: <code>Mahasiswa</code>, <code>Mata_Kuliah</code>, <code>KRS</code> (Kartu Rencana Studi)</li>
-                            <li><b>Visualisasi di Workbench:</b></li>
+                        <p>Sebagai mahasiswa Teknik Informatika, kita pasti sudah tidak asing lagi dengan yang namanya ERD (Entity-Relationship Diagram). ERD adalah fondasi dari perancangan database yang baik. Salah satu komponen kuncinya adalah relasi atau relationship, yang menggambarkan bagaimana satu entitas terhubung dengan entitas lainnya.</p>
+                        <p>Namun, ada satu jenis relasi yang sering menjadi "jebakan" bagi para pemula: relasi Many-to-Many (M:N). Di postingan ini, kita akan bedah tuntas apa itu relasi, mengapa relasi M:N ini bermasalah dalam implementasi database fisik, dan bagaimana cara mengatasinya menggunakan MySQL Workbench.</p>
+                        <h2 class="section-heading">Memahami Konsep Relasi dalam ERD</h2>
+                        <p>Secara sederhana, relasi adalah hubungan yang terjadi antara dua atau lebih entitas. Hubungan ini digambarkan dengan garis yang menghubungkan entitas-entitas tersebut. Kekuatan atau jumlah hubungan ini disebut kardinalitas, yang terbagi menjadi tiga jenis utama:</p>
+                        <ol>
+                            <li><b>One-to-One (1:1)</b>:Satu data di entitas A hanya bisa berhubungan dengan satu data di entitas B.</li>
                             <ul>
-                                <li>Buat tiga tabel.</li>
-                                <li>Tabel <code>Mahasiswa</code> memiliki <b>Primary Key</b> <code>NIM</code>. Di sini, <code>Email_Kampus</code> bisa menjadi <b>Candidate Key</b>.</li>
-                                <li>Tabel <code>Mata_Kuliah</code> adalah tabel penghubung. Ia memilik <b>Primary Key</b> <code>Kode_MK</code> di tabel.</li>
-                                <li>Tabel <code>KRS</code> memiliki <b>Foreign Key</b> <code>NIM_Mhs</code> yang merujuk ke <code>NIM</code> di tabel <code>Mahasiswa</code>, dan <b>Foreign Key</b> <code>Kode_MK</code> yang merujuk ke <code>Kode_MK</code> di tabel <code>Mata_Kuliah</code>. Kombinasi <code>(NIM_Mhs, Kode_MK)</code> bisa menjadi Primary Key untuk tabel <code>KRS</code>.</li>
+                                <li>Contoh: Satu <code>Mahasiswa</code> hanya bisa memiliki satu <code>KTM</code> (Kartu Tanda Mahasiswa).</li>
                             </ul>
-                        </ul>
-                        <a href="#!"><img class="img-fluid" src="assets/img/dokumentasi_post_7_1.png" alt="..." /></a>
-                        <span class="caption text-muted">Contoh visualisasi di MySQL Workbench</span>
-                        <p><b>Contoh 2: Sistem Perpustakaan</b></p>
-                        <ul>
-                            <li><b>Entitas</b>: <code>Buku</code>, <code>Anggota</code>, <code>Peminjaman</code></li>
-                            <li><b>Visualisasi di Workbench:</b></li>
+                            <li><b>One-to-Many (1:N)</b>: Satu data di entitas A bisa berhubungan dengan banyak data di entitas B.</li>
                             <ul>
-                                <li>Tabel <code>Buku</code> memiliki <b>Primary Key</b> <code>ID_Buku</code>. <code>ISBN</code> bisa menjadi <b>Candidate Key</b>.</li>
-                                <li>Tabel <code>Anggota</code> memiliki <b>Primary Key</b> <code>ID_Anggota</code>. <code>Email_Anggota</code> bisa menjadi <b>Candidate Key</b>.</li>
-                                <li>Tabel <code>Peminjaman</code> memiliki <b>Foreign Key</b> <code>ID_Anggota</code> yang merujuk ke tabel <code>Anggota</code>, dan <b>Foreign Key</b> <code>ID_Buku</code> yang merujuk ke tabel <code>Buku</code>. Kombinasi <code>(ID_Anggota, ID_Buku)</code> bisa menjadi Primary Key untuk tabel <code>Peminjaman</code>.</li>
+                                <li>Contoh: Satu <code>Dosen</code> dapat membimbing banyak <code>Mahasiswa</code> , tetapi satu <code>Mahasiswa</code> hanya dibimbing oleh satu <code>Dosen</code> Wali.</li>
                             </ul>
-                        </ul>
-                        <a href="#!"><img class="img-fluid" src="assets/img/dokumentasi_post_7_2.png" alt="..." /></a>
-                        <span class="caption text-muted">Contoh visualisasi di MySQL Workbench</span>
-                        <p><b>Contoh 3: Sistem Penjualan Online</b></p>
-                        <ul>
-                            <li><b>Entitas</b>: <code>Produk</code>, <code>Pelanggan</code>, <code>Pesanan</code></li>
-                            <li><b>Visualisasi di Workbench:</b></li>
+                            <li><b>Many-to-Many (M:N)</b>: Banyak data di entitas A bisa berhubungan dengan banyak data di entitas B.</li>
                             <ul>
-                                <li>Tabel <code>Produk</code> memiliki <b>Primary Key</b> <code>ID_Produk</code>. <code>Kode_Produk</code> bisa menjadi <b>Candidate Key</b>.</li>
-                                <li>Tabel <code>Pelanggan</code> memiliki <b>Primary Key</b> <code>ID_Pelanggan</code>. <code>Email_Pelanggan</code> bisa menjadi <b>Candidate Key</b>.</li>
-                                <li>Tabel <code>Pesanan</code> memiliki <b>Foreign Key</b> <code>ID_Pelanggan</code> yang merujuk ke tabel <code>Pelanggan</code>, dan <b>Foreign Key</b> <code>ID_Produk</code> yang merujuk ke tabel <code>Produk</code>. Kombinasi <code>(ID_Pelanggan, ID_Produk)</code> bisa menjadi Primary Key untuk tabel <code>Pesanan</code>.</li>
+                                <li>Contoh: Banyak <code>Mahasiswa</code> dapat mengambil banyak <code>MataKuliah</code>, dan satu <code>MataKuliah</code> dapat diambil oleh banyak <code>Mahasiswa</code>.</li>
                             </ul>
-                        </ul>
-                        <p><b>Contoh 4: Sistem Manajemen Proyek</b></p>
-
+                        </ol>
+                        <p>Konsep M:N secara teori terdengar logis, bukan? Tapi saat kita coba menerapkannya ke dalam tabel database fisik, masalah pun muncul.</p>
+                        <h2 class="section-heading">Mengapa Relasi Many-to-Many Bermasalah?</h2>
+                        <p>Sebenarnya, relasi M:N bukanlah konsep yang salah, tetapi tidak bisa diimplementasikan secara langsung pada database relasional seperti MySQL. Jika kita memaksakannya, akan ada dua masalah besar:</p>
+                        <ol>
+                            <li>Redundansi Data dan Anomali</li>
+                            <p>Bayangkan kita punya tabel <code>Mahasiswa</code> dan <code>MataKuliah</code>. Jika kita ingin mencatat siapa mengambil apa, di mana kita akan menyimpan foreign key-nya?</p>
+                            <ul>
+                                <li>Jika <code>matakuliah_id</code> ditaruh di tabel <code>Mahasiswa</code>, maka satu mahasiswa hanya bisa mengambil satu matkul. Tidak bisa M:N.</li>
+                                <li>Jika <code>mahasiswa_id</code> ditaruh di tabel <code>MataKuliah</code>, maka satu matkul hanya bisa diambil oleh satu mahasiswa. Juga tidak bisa M:N.</li>
+                                <li>Jika kita membuat kolom <code>mahasiswa_id</code> atau <code>matakuliah_id</code> bisa menampung banyak nilai (misal: "MK01, MK02, MK03"), ini melanggar aturan normalisasi pertama (1st Normal Form) dan akan sangat sulit untuk mengelola dan melakukan query data.</li>
+                            </ul>
+                            <li>Kesulitan Menyimpan Atribut Relasi</li>
+                            <p>Seringkali, sebuah hubungan memiliki data atau atributnya sendiri. Pada kasus Mahasiswa mengambil MataKuliah, ada atribut penting seperti Nilai, Tanggal Pendaftaran, atau Semester.</p>
+                            <p>Di mana kita akan menyimpan kolom nilai?</p>
+                        </ol>
+                        
                     </div>
                 </div>
             </div>

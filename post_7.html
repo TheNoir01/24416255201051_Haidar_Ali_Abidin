@@ -124,8 +124,33 @@
                                 <li>Tabel <code>Pesanan</code> memiliki <b>Foreign Key</b> <code>ID_Pelanggan</code> yang merujuk ke tabel <code>Pelanggan</code>, dan <b>Foreign Key</b> <code>ID_Produk</code> yang merujuk ke tabel <code>Produk</code>. Kombinasi <code>(ID_Pelanggan, ID_Produk)</code> bisa menjadi Primary Key untuk tabel <code>Pesanan</code>.</li>
                             </ul>
                         </ul>
-                        <p><b>Contoh 4: Sistem Manajemen Proyek</b></p>
-
+                        <a href="#!"><img class="img-fluid" src="assets/img/dokumentasi_post_7_3.png" alt="..." /></a>
+                        <span class="caption text-muted">Contoh visualisasi di MySQL Workbench</span>
+                        <p><b>Contoh 4: Sistem Rumah Sakit</b></p>
+                        <ul>
+                            <li><b>Entitas</b>: <code>Pasien</code>, <code>Dokter</code>, <code>Rekam_Medis</code></li>
+                            <li><b>Visualisasi di Workbench:</b></li>
+                            <ul>
+                                <li>Tabel <code>Pasien</code> memiliki <b>Primary Key</b> <code>ID_Pasien</code>. <code>No_Rekam_Medis</code> juga merupakan <b>Candidate Key</b> yang kuat.</li>
+                                <li>Tabel <code>Dokter</code> memiliki <b>Primary Key</b> <code>ID_Dokter</code>. <code>No_SIP</code> (Surat Izin Praktik) adalah <b>Candidate Key</b>.</li>
+                                <li>Tabel <code>Rekam_Medis</code> memiliki <b>Primary Key</b> <code>ID_Rekam_Medis</code>. Tabel ini memiliki dua <b>Foreign Key</b>: <code>ID_Pasien</code> (merujuk ke Pasien) dan <code>ID_Dokter</code> (merujuk ke Dokter).</li>
+                            </ul>
+                        </ul>
+                        <a href="#!"><img class="img-fluid" src="assets/img/dokumentasi_post_7_4.png" alt="..." /></a>
+                        <span class="caption text-muted">Contoh visualisasi di MySQL Workbench</span>
+                        <p><b>Contoh 5: Blog Sederhana</b></p>
+                        <ul>
+                            <li><b>Entitas</b>: <code>user</code>, <code>Postingan</code>, <code>Komentar</code></li>
+                            <li><b>Visualisasi di Workbench:</b></li>
+                            <ul>
+                                <li>Tabel <code>user</code> memiliki <b>Primary Key</b> <code>id_user</code>. <code>username</code> dan <code>email</code> adalah <b>Candidate Key</b>.</li>
+                                <li>Tabel <code>Postingan</code> memiliki <b>Primary Key</b> <code>id_postingan</code>. Tabel ini memiliki <b>Foreign Key</b> <code>id_user</code> yang merujuk ke tabel <code>user</code>.</li>
+                                <li>Tabel <code>Komentar</code> memiliki <b>Primary Key</b> <code>id_komentar</code>. Tabel ini memiliki dua <b>Foreign Key</b>: <code>id_user</code> (merujuk ke user yang mengomentari) dan <code>id_postingan</code> (merujuk ke postingan yang dikomentari).</li>
+                            </ul>
+                        </ul>
+                        <a href="#!"><img class="img-fluid" src="assets/img/dokumentasi_post_7_5.png" alt="..." /></a>
+                        <span class="caption text-muted">Contoh visualisasi di MySQL Workbench</span>
+                        <p>Dengan memahami dan menerapkan konsep Primary Key, Foreign Key, dan Candidate Key, kita bisa merancang database yang tidak hanya efisien tetapi juga mudah di-maintain. Jadi, jangan ragu untuk bereksperimen dengan MySQL Workbench dan buatlah ERD-mu sendiri!</p>
                     </div>
                 </div>
             </div>
