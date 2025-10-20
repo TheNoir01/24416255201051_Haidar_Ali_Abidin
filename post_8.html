@@ -89,8 +89,20 @@
                             <li>Kesulitan Menyimpan Atribut Relasi</li>
                             <p>Seringkali, sebuah hubungan memiliki data atau atributnya sendiri. Pada kasus Mahasiswa mengambil MataKuliah, ada atribut penting seperti Nilai, Tanggal Pendaftaran, atau Semester.</p>
                             <p>Di mana kita akan menyimpan kolom nilai?</p>
+                            <ul>
+                                <li>Tidak bisa di tabel <code>Mahasiswa</code>, karena satu mahasiswa punya banyak nilai untuk mata kuliah yang berbeda.</li>
+                                <li>Tidak bisa di tabel <code>MataKuliah</code>, karena satu mata kuliah memiliki banyak nilai dari mahasiswa yang berbeda.</li>
+                            </ul>
                         </ol>
-                        
+                        <p>Inilah alasan utama mengapa relasi M:N secara konseptual harus "dipecah" saat perancangan database fisik.</p>
+                        <p><b>Solusinya: Gunakan Junction Table (Tabel Penghubung)</b></p>
+                        <p>Untuk menyelesaikan masalah ini, kita memperkenalkan entitas baru yang disebut Junction Table atau Entitas Asosiatif. Tabel ini berfungsi sebagai jembatan antara dua entitas yang memiliki hubungan M:N.</p>
+                        <P>Caranya adalah dengan mengubah satu relasi M:N menjadi dua relasi 1:N.</P>
+                        <ul>
+                            <li>Dari <code>Mahasiswa</code> ke <code>Junction Table</code> (Relasi 1:N)</li>
+                            <li>Dari <code>MataKuliah</code> ke <code>Junction Table</code> (Relasi 1:N)</li>
+                        </ul>
+                        <p>Dengan begini, setiap baris di junction table akan merepresentasikan satu hubungan unik antara seorang mahasiswa dengan satu mata kuliah. Tabel ini juga menjadi tempat yang sempurna untuk menyimpan atribut relasi seperti <code>nilai</code>.</p>
                     </div>
                 </div>
             </div>
